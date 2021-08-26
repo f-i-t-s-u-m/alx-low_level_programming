@@ -1,14 +1,12 @@
 #include <stdio.h>
+
 /**
-* main - app gate 
-*
-* Return: just smile (Success)
-*/
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-  
-char fiba[]="with proper grammar, but the outcome is a piece of art,";
-printf(fiba);
-return (0);
-
+	printf("with proper grammar, but the outcome is a piece of art,\n");
+	return (0);
 }
