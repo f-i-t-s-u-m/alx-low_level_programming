@@ -1,13 +1,6 @@
 #include<stdio.h>
 /**
  * main - main block
- * 
- * Return: 0
- */
-#include <stdio.h>
-
-/**
- * main - create 2 pairs of numbers that do not repeat
  * Return: 0
  */
 int main(void)
