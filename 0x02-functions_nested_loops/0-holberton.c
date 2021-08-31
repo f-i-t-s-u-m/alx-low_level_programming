@@ -1,4 +1,4 @@
-char _putchar(char);
+#include "main.h"
 
 int main(void)
 {
