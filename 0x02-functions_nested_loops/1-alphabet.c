@@ -1,15 +1,9 @@
 #include "main.h"
 /**
- * main - check the code for ALX School students.
+ * print_alphabet - start here.
  *
  * Return: Always 0.
  */
-int main(void)
-{
-  print_alphabet();
-  _putchar('\n');
-  return (0);
-}
 
 void print_alphabet(void)
 {
@@ -20,4 +14,5 @@ void print_alphabet(void)
     _putchar(a);
     ++a;
   }
+  _putchar('\n');
 }
