@@ -1,5 +1,4 @@
 #include "main.h"
-#include <string.h>
 /**
  * _strcat - start here
  * Return:pinter
@@ -9,6 +8,16 @@
 
 char *_strcat(char *dest, char *src)
 {
-strcat(dest, src);
+int j = 0, i;
+
+while (dest[j] != '\0')
+{
+j++;
+}
+for (i = 0; src[i] != '\0'; i++)
+{
+dest[j + i] = src[i];
+}
+
 return (dest);
 }
