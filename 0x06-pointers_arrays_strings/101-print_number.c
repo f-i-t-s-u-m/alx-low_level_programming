@@ -1,29 +1,34 @@
 #include "main.h"
-
 /**
- * print_number - prints an integer.
- * @n: integer
- * Return: void
+ * print_number - prints a number
+ * @n: Input number
  */
 
 void print_number(int n)
 {
-int divisor = 1, i, resp;
+	int res, temp, expo;
 
-if (n < 0)
-{
-	_putchar('-');
-	n *= -1;
-}
+	expo = 1;
+/*Check negatives*/
+	if (n >= 0)
+		res = n * -1;
+	else
+	{
+		res = n;
+		_putchar('-');
+	}
 
-for (i = 0; n / divisor > 9; i++, divisor *= 10)
-;
-
-for (; divisor >= 1; n %= divisor, divisor /= 10)
-{
-	resp = n / divisor;
-	_putchar('0' + resp);
-
-}
-
+/*Initialize exponent variable*/
+	temp = res;
+	while (temp <= -10)
+	{
+		expo *= 10;
+		temp /= 10;
+	}
+/*Main */
+	while (expo >= 1)
+	{
+		_putchar(((res / expo) % 10) * -1 + '0');
+		expo /= 10;
+	}
 }
