@@ -9,7 +9,7 @@
 char *_strchr(char *s, char c)
 {
 unsigned int i;
-char *null = NULL;
+
 
 for (i = 0; s[i] != '\0'; i++)
 {
@@ -24,6 +24,6 @@ return (s + i);
 }
 else
 {
-return (null);
+return (NULL);
 }
 }
