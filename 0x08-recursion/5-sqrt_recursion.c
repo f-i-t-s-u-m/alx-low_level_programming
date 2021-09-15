@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * int natural_root - function for natural
+ * natural_root - function for natural
  * @n: given int
  * @root: possible root
  * Return: -1 if no possible root, or its natural square root
