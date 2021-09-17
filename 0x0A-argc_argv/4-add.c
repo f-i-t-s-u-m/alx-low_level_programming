@@ -1,30 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *main - function starting point
- *@argc: arg length
- *@argv: array of agr
- *Return: int
+ * isInteger - checks if s is an integer
+ * @s: string to check
+ * Return: 0 or 1
  */
-int main(int argc, char *argv[])
-{
-	int i, m = 0;
 
-	if (argc < 1)
+int isInteger(const char *s)
+{
+int i = 0;
+while (s[i] != '\0')
+{
+	if (s[i] < '0' || s[i] > '9')
+		return (1);
+	i++;
+}
+return (0);
+}
+
+/**
+ * main - adds positive numbers
+ * @argc: int
+ * @argv: list
+ * Return: 0
+ */
+
+int main(int argc, char const *argv[])
+{
+int sum = 0;
+while (--argc)
+{
+	if (isInteger(argv[argc]))
 	{
-		printf("%d\n", 0);
+		printf("Error\n");
 		return (1);
 	}
-	for (i = 1; i < argc; i++)
-	{
+	sum += atoi(argv[argc]);
+}
 
-	if (argv[i][0] != '0' && atoi(argv[i]) == 0)
-	{
-	printf("%s\n", "Error");
-	return (1);
-	}
-	m = m + atoi(argv[i]);
-	}
-	printf("%d\n", m);
-	return (0);
+printf("%i\n", sum);
+
+return (0);
 }
