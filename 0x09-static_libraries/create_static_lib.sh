@@ -3,5 +3,5 @@ for f in .c;
 do 
 	gcc -c *.c
 done
-ar rs libmy.a *.o
+ar rs liball.a *.o
 
