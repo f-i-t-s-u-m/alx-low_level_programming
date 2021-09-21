@@ -24,12 +24,17 @@ int _stlen(char *s)
 
 char *str_concat(char *s1, char *s2)
 {
-
 	unsigned int i, j;
 	char *ptr;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
+	if (s1 == NULL)
+	{
+		s1 = " ";
+	}
+	if (s2 == NULL)
+	{
+		s2 = " ";
+	}
 	ptr = (char *)malloc(_stlen(s1) + _stlen(s2) + 1);
 	if (ptr == NULL)
 		return (NULL);
