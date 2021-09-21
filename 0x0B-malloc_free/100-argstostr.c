@@ -10,7 +10,8 @@
 
 char *argstostr(int ac, char **av)
 {
-	int i,k = 0,n,l,t *ptr;
+	int i,k = 0,n,l;
+       char *ptr;
 	
 	if(ac == 0 || av == NULL)
 	return (NULL);
@@ -20,7 +21,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 		;
 	}
-	ptr = (int *)malloc((k * i) + 4);
+	ptr = (char *)malloc((k * i) + 4);
 	
 	for(n = 0; n < ac + 4; n++, l++)
 	{
@@ -29,5 +30,5 @@ char *argstostr(int ac, char **av)
 			ptr[l] = av[n][z];
 	}
 
-	return (ptr)
+	return (ptr);
 }
