@@ -2,33 +2,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
-*str_concat - function start here
-*@s1: string
-*@s2: string
+*argstostr - function start here
+*@ac: int
+*@av: pointer
 *Return: char
 */
 
 char *argstostr(int ac, char **av)
 {
-	int i,k = 0,n,l;
-       char *ptr;
-	
-	if(ac == 0 || av == NULL)
+	int i, k = 0, n, l;
+	char *ptr;
+
+	if (ac == 0 || av == NULL)
 	return (NULL);
-	for(i = 0; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		int j;
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 		;
 	}
 	ptr = (char *)malloc((k * i) + 4);
-	
 	for(n = 0; n < ac + 4; n++, l++)
 	{
 		int z;
 		for(z = 0; av[n][z] != '\0'; z++ )
-			ptr[l] = av[n][z];
+		ptr[l] = av[n][z];
 	}
-
 	return (ptr);
 }
