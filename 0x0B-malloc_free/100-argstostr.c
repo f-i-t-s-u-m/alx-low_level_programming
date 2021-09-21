@@ -18,15 +18,16 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 	{
 		int j;
+
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 		;
 	}
-	
-	ptr = (char *)malloc(k + ac);
-	for(n = 0; n < ac; n++)
+	ptr = (char *)malloc(k + ac - 1);
+	for (n = 0; n < ac; n++)
 	{
 		int z;
-		for(z = 0; av[n][z] != '\0'; z++, l++ )
+
+		for (z = 0; av[n][z] != '\0'; z++, l++)
 		{
 			ptr[l] = av[n][z];
 		}
