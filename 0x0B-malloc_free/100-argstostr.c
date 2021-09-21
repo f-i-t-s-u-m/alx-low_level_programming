@@ -1,10 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-int _cs(char **s)
-{
-
-}
 /**
 *str_concat - function start here
 *@s1: string
@@ -12,7 +8,7 @@ int _cs(char **s)
 *Return: char
 */
 
-char *argstostr(int ac, char **av);
+char *argstostr(int ac, char **av)
 {
 	int i,k = 0,n,l,t *ptr;
 	
@@ -20,7 +16,7 @@ char *argstostr(int ac, char **av);
 	return (NULL);
 	for(i = 0; i < ac; i++)
 	{
-		int j
+		int j;
 		for (j = 0; av[i][j] != '\0'; j++, k++)
 		;
 	}
