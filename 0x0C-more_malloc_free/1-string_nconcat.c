@@ -35,7 +35,7 @@ unsigned int _strlen(char *str, unsigned int col, unsigned int n)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int z = 0, i = 0;
-	char *ptr = malloc(_strlen(s1, 1, n) + _strlen(s2, 2, n));
+	char *ptr = malloc(_strlen(s1, 1, n) + _strlen(s2, 2, n) + 1);
 
 	if (ptr == NULL)
 	{
