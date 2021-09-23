@@ -45,14 +45,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		ptr[z] = s1[z];
 	}
-	for (; z < _strlen(s1, 1, n) + _strlen(s2, 2, n) &&
-		i < _strlen(s2, 2, n) ; z++, i++)
+	for (; i < _strlen(s2, 2, n); i++)
 	{
 		if (s2 != NULL)
-		ptr[z] = s2[i];
+		ptr[z + i] = s2[i];
 		else
-		ptr[z] = ' ';
+		ptr[z + i] = '\0';
 	}
-	ptr[z] = '\0';
+	ptr[z + i] = '\0';
 	return (ptr);
 }
