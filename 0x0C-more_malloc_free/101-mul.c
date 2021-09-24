@@ -1,16 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+/**
+ *cnn - function
+ *@str: string
+ *Return: int
+ */
 int cnn(char **str)
 {
- int i = 1;
+	int i = 1;
 
- 	while(str[i])
+	while (str[i])
 	{
 		int z = 0;
-		while(str[i][z])
+
+		while (str[i][z])
 		{
-			if(str[i][z] >= 47 && str[i][z] <= 57)
+			if (str[i][z] >= 47 && str[i][z] <= 57)
 			;
 			else
 			{
@@ -24,19 +29,25 @@ int cnn(char **str)
 	return (0);
 
 }
-
+/**
+ *main - function
+ *@argc: number of argv
+ *@argv: strings
+ *Return: int
+ */
 int main(int argc, char *argv[])
 {
 	int sum = 0;
-	if(argc != 3)
+
+	if (argc != 3)
 	{
 		printf("\n%s\n", "Error");
 		exit(98);
 	}
-	else if(cnn(argv) == 0)
+	else if (cnn(argv) == 0)
 	{
 		sum = atoi(argv[1]) + atoi(argv[2]);
-		printf("%d\n", atoi(argv[1]) + atoi(argv[2]));	
+		printf("%d\n", atoi(argv[1]) + atoi(argv[2]));
 	}
 
 	return (sum);
