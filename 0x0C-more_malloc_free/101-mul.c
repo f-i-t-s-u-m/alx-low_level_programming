@@ -14,7 +14,7 @@ int cnn(char **str)
 			;
 			else
 			{
-			printf("\n%s\n", "Error");
+			printf("%s\n", "Error");
 			exit(98);
 			}
 			z++;
@@ -35,9 +35,8 @@ int main(int argc, char *argv[])
 	}
 	else if(cnn(argv) == 0)
 	{
-		printf("\n%d\n", atoi(argv[1]) + atoi(argv[2]));
 		sum = atoi(argv[1]) + atoi(argv[2]);
-	
+		printf("%d\n", atoi(argv[1]) + atoi(argv[2]));	
 	}
 
 	return (sum);
