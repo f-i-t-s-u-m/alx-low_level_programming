@@ -1,26 +1,39 @@
 #include "main.h"
-#include <stdlib.h>
+
 /**
- *_calloc- function to assign space on memory
- *@nmemb:int
- *@size:int
- *Return: address
+ * _memset - copy char
+ * @s: string
+ * @b: input
+ * @n: bytes
+ * Return: string
+ */
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
+}
+
+/**
+ * _calloc - allocates memory for an array using malloc
+ * @nmemb: n elements
+ * @size: bytes
+ * Return: pointer
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int a;
-	int *ptr;
+	void *p;
 
 	if (nmemb == 0 || size == 0)
-	{
 		return (NULL);
-	}
-	ptr = malloc(sizeof(ptr) * (size * nmemb));
-	if (ptr == NULL)
+	p = malloc(nmemb * size);
+
+	if (p == NULL)
 		return (NULL);
-	for (a = 0; a < (size * nmemb); a++)
-	{
-		ptr[a] = 0;
-	}
-	return (ptr);
+	_memset(p, 0, (nmemb * size));
+	return (p);
 }
