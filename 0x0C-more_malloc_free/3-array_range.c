@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * *array_range -  create an array of integers
  * @min: size of the array
@@ -22,3 +23,5 @@ if (m == 0)
 
 for (i = 0; min + i <= max; i++)
 	m[i] = min + i;
+return (m);
+}
