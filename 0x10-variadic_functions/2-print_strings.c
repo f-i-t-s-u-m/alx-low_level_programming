@@ -18,8 +18,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		string = va_arg(list, char *);
 
 		printf("%s", string != NULL ? string : "(nil)");
-		if (separator[0] != '\0' && (i + 1) < n)
-		printf("%c ", separator[0]);
+		if (separator && (i + 1) < n)
+		printf("%s", separator);
 		i++;
 	}
 	va_end(list);
