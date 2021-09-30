@@ -15,10 +15,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	while (i < n)
 	{
 		printf("%d", va_arg(list, int));
-		if (separator[0] != '\0' && i + 1 < n)
-		printf("%c ", separator[0]);
+		if (separator && i + 1 < n)
+		printf("%s ", separator);
 		i++;
 	}
 	va_end(list);
-	printf("%c", '\n');
+	printf("\n");
 }
