@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	while(*(format+a))
 	{
 		int sep = 0;
-
+		char *str;
 		switch(*(format+a)) 
 		{
 		case 'c':
@@ -30,7 +30,8 @@ void print_all(const char * const format, ...)
 			sep = 1;
 			break;
 		case 's':
-			printf("%s", va_arg(list, char *));
+			str = va_arg(list, char *);
+			printf("%s", str != NULL ? str : "(nil)");
 			sep = 1;
 			break;
 		}
