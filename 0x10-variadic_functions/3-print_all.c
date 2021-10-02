@@ -9,13 +9,11 @@ void print_all(const char * const format, ...)
 {
 	va_list list;
 	int a = 0;
-	char *sep = "";
+	char *str, *sep = "";
 
 	va_start(list, format);
 	while (*(format + a))
 	{
-		char *str;
-
 		switch (*(format + a))
 		{
 		case 'c':
