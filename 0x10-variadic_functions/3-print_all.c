@@ -1,47 +1,42 @@
 #include "variadic_functions.h"
 #include <stdio.h>
 /**
- *
- *
+ * print_all - function that print all types
+ *@format: format type
  *
  */
 void print_all(const char * const format, ...)
 {
 	va_list list;
 	int a = 0;
-	
+	char *sep = "";
+
 	va_start(list, format);
-	while(*(format+a))
+	while (*(format + a))
 	{
-		int sep = 0;
 		char *str;
-		switch(*(format+a)) 
+
+		switch (*(format + a))
 		{
 		case 'c':
-			printf("%c", va_arg(list, int));
-			sep = 1;
+			printf("%s%c", sep, va_arg(list, int));
 			break;
 		case 'i':
-			printf("%d", va_arg(list, int));
-			sep = 1;
+			printf("%s%d", sep, va_arg(list, int));
 			break;
 		case 'f':
-			printf("%e", va_arg(list, double));
-			sep = 1;
+			printf("%s%f", sep, va_arg(list, double));
 			break;
 		case 's':
 			str = va_arg(list, char *);
-			printf("%s", str != NULL ? str : "(nil)");
-			sep = 1;
+			printf("%s%s", sep, str != NULL ? str : "(nil)");
 			break;
+		default:
+			a++;
+			continue;
 		}
-		 if(sep == 1 && *(format + (a + 1)))
-		 {
-			 printf("%s", ", ");
-		 }
+		sep = ", ";
 		a++;
-
-
 	}
 	va_end(list);
 	printf("\n");
