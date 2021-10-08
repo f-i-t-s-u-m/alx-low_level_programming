@@ -1,38 +1,35 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <string.h>
 /**
- *_strlen - function to count length
- *@str: array of string
- *Return: length
- */
-int _strlen(const char *str)
-{
-	int a = 0;
-
-	while (str[a])
-	{
-		a++;
-	}
-	return (a);
-}
-/**
- * add_node - function to add new node
- * @head: head of linked list
- * @str: string to inject inside linked list
- * Return: pointer to head
- */
-
+ * add_node - adds a node at the end of a list
+ * @head: pointer to the start of the list
+ * @str: string to be copied inside the new node
+ * Return: pointer to the new node
+ **/
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *node;
+	list_t *new;
 
-	node = malloc(sizeof(list_t));
-	if (node == NULL)
+	new = malloc(sizeof(list_t));
+	if (new == NULL)
 		return (NULL);
-	node->str = strdup(str);
-	node->len = _strlen(str);
-	node->next = *head;
-	*head = node;
-	return (node);
+	new->str = strdup(str);
+	new->len = _strlen(str);
+	new->next = *head;
+	*head = new;
+	return (new);
+}
+/**
+ * _strlen - determinates the lenght of a string
+ * @s: pointer to string
+ * Return: the length
+ */
+int _strlen(const char *s)
+{
+int a;
+int len;
+for (a = 0; s[a] != '\0'; a++)
+{
+len++;
+}
+return (a);
 }
