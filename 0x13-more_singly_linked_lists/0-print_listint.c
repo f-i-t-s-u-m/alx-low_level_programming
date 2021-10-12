@@ -4,7 +4,6 @@
  * print_listint - function
  * @h: struct list
  * Return: the number of nodes
- *
  */
 size_t print_listint(const listint_t *h)
 {
