@@ -32,7 +32,7 @@ unsigned int binary_to_uint(const char *b)
 	char *newptr = malloc(sizeof(_strrev(b)));
 
 	newptr = _strrev(b);
-	if (newptr == NULL || b == NULL)
+	if (newptr == NULL || !b)
 		return (0);
 	while (newptr[i])
 	{
