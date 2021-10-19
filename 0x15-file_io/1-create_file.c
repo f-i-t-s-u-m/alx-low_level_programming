@@ -8,15 +8,16 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, owr;
+	int fd, owr, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd == -1)
 		return (-1);
-	owr = write(fd, text_content ? text_content : "",
-			text_content ? strlen(text_content) : 1);
+	while (text_content)
+		len++;
+	owr = write(fd, len > 0 ? text_content : "", 0);
 	if (owr == -1)
 		return (-1);
 	close(fd);
