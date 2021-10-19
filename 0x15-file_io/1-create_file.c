@@ -21,5 +21,5 @@ int create_file(const char *filename, char *text_content)
 	if (owr == -1)
 		return (-1);
 	close(fd);
-	return (len);
+	return (1);
 }
